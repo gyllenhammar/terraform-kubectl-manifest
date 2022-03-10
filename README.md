@@ -1,1 +1,0 @@
-# terraform-kubectl-manifest
