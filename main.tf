@@ -13,7 +13,7 @@ provider "kubectl" {
 }
 
 data "kubectl_file_documents" "docs" {
-  content = (file(var.manifest_file_path) != "" ? file(var.manifest_file_path) : var.manifest_content)
+  content = (var.manifest_file_path != "" ? file(var.manifest_file_path) : var.manifest_content)
 }
 
 resource "kubectl_manifest" "sentence-resource" {
