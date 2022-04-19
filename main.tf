@@ -2,7 +2,7 @@ terraform {
   required_providers {
     kubectl = {
       source  = "gavinbunney/kubectl"
-      version = "~>1.13.0"
+      version = "~>1.14.0"
     }
   }
 }
@@ -10,6 +10,7 @@ terraform {
 provider "kubectl" {
   apply_retry_count = 3
   config_path       = var.kubeconfig_path
+  load_config_file  = false
 }
 
 data "kubectl_file_documents" "docs" {
